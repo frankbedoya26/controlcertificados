@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cabecera: #0F4C75;
+    --subcabecera: #3282B8;
+    --complemento: #BBE1FA;
+    --sombra: #1B262C;
+    font-size: 11px;
+    
+
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+/* -------home------------- */
+.logo{
+    height: 6vh;
+}
+.div_titulo{
+    justify-self: center;
+    margin: 0 3em;
+    font-weight: 900;
+}
+h5{
+    margin: 0 8vw;
+    font-family:'Roboto',sans-serif; ;
+    color: #eee;
+    font-size: 1.5em;
+}
+h2{
+    color: #eee;
+}
+h6{
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 1em;
+}
+.nav_cabecera{
+    width: 100%;
+    height: 8vh;
+    background-color: var(--sombra);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 1px var(--sombra);
+    
+}
+.nav_secundario{
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    background-color: var(--cabecera);
+    box-shadow:  0 1px 1px var(--cabecera);
+    align-items: center;
+}
+.div_logo{
+    margin:0.5em 2em;
+}
+.conteiner{
+    width: 100vw;
+    height: 84vh;
+    display: flex;
+    font-size: 0.9em;
+}
+.div_detalles{
+    width: 16vw;
+    height: 100%;
+    background-color: var(--cabecera);
+    box-shadow: 1px 0 1px var(--cabecera);
+
+}
+.div_tabla{
+    width: 84vw;
+    height: 100%;
+    padding: 0.5em;
+}
+#tabla{
+    min-width: 80vw;
+    font-weight: 300;
+    max-height: 84vh;
+}
+td,th{
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Roboto Flex',sans-serif;
+    font-weight: 300;
+}
+th:hover{
+    background-color: #1B262C;
+    transition: 1s;
+
+}
+thead{
+    background-color: var(--subcabecera);
+    color: white;
+    border-radius: 3px;
+}
+.active>.page-link{
+    background-color: var(--cabecera);
+    border-color: var(--sombra);
+}
+.filtro{
+    margin:3em 1em;
+}
+.form-inline{
+    display: flex;
+    background-color: transparent;
+}
+.form-control{
+    width: 30em;
+    margin: 0;
+    margin-left: 16vw;
+    border: 3px solid var(--subcabecera);
+}
+.contenedor{
+    margin: 6em 1em;
+    padding: 4em 0;
+    border: 1px solid var(--sombra);
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px var(--sombra);
+    background-color: #092f49;
+    transition: .5s;
+}
+.contenedor:hover{
+    background-color: #072336;
+    transition: .5s;
+}
+.form-select:hover{
+    background-color: var(--sombra);
+    color: white;
+    transition: .5s;
+}
+.buscar{
+    margin-top: 2px;
+    margin-left: 1em;
+}

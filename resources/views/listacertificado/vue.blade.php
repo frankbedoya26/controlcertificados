@@ -21,6 +21,13 @@
       thispage:'1',
 
       nivel:'',
+
+      divapp:false,
+      divacacip:false,
+
+      numcert:[],
+      cbocert:0,
+      fecemirec:'',
     },
     created: function() {
       this.mostrarcertificado();
@@ -65,8 +72,24 @@ computed:{
           this.txtfecentre=response.data.fecha;
         });
     },
+    getnumcertificado:function (cod) {
+        var url='numero/certificado/'+cod;
+        axios.get(url).then(response=>{
+          this.numcert=response.data.alumno;
+        });
+    },
       fechaemi:function(cert){
           this.idcert=cert.id;
+          this.nivel=cert.Tipo;
+          if(cert.Tipo=="Pregrado" || cert.Tipo=="Postgrado"){
+            this.divapp=true;
+            this.divacacip=false;
+            this.getnumcertificado(cert.fk_idalumpp);
+          }
+          if(cert.Tipo=="Cacip"){
+            this.divapp=false;
+            this.divacacip=true;
+          }
           this.fecha();
           $('#modfechaemi').modal('toggle');
       },
@@ -117,19 +140,36 @@ limpiar:function(){
   this.txtfecfir="";
   this.txtnumcert="";
 },
+getfechacer:function(){
+  var url='fecha/certificado/'+this.cbocert;
+        axios.get(url).then(response=>{
+            this.fecemirec=response.data.fec[0]['created'];
+        });
+},
 
       guardafecemi: function() {
-        if (this.txtfecemi.trim()!="") {
+        if (this.txtfecemi.trim()!="" && (this.txtnumcert.trim()!="" || this.fecemirec.trim()!="")) {
           var data = new FormData();
           data.append('tipo',"fecemi");
-          data.append('fecemi', this.txtfecemi);
+          
+          if(this.nivel=="Pregrado" || this.nivel=="Postgrado"){
+            data.append('numcert', this.cbocert);
+            data.append('fecemi', this.fecemirec);
+          }
+          if(this.nivel=="Cacip"){
+            data.append('numcert', this.txtnumcert);
+            data.append('fecemi', this.txtfecemi);
+          }
+          data.append('nivel', this.nivel);
           data.append('_method', 'PUT');
           var url="listcert/"+this.idcert;
           axios.post(url, data).then(response => {
             this.getcertificado();
             $('#modfechaemi').modal('toggle');
             this.limpiar();
-          }).catch(error => {})
+          }).catch(error => {
+
+          })
         } else {
           toastr.warning("Debe llenar todos los campos");
         }
@@ -141,12 +181,8 @@ limpiar:function(){
               this.guardafecfir();
               $('#modfechafir').modal('toggle');
             }else {
-              if (this.txtnumcert.trim()!="") {
-                this.guardafecfir();
+              this.guardafecfir();
               $('#modfechafir').modal('toggle');
-              }else{
-                toastr.warning("Debe de ingresar el número del certificado");
-              }
             }
           }else{
 toastr.warning("La fecha de firma debe ser mayor o igual a la fecha de emisión");
@@ -159,7 +195,6 @@ toastr.warning("La fecha de firma debe ser mayor o igual a la fecha de emisión"
 var data = new FormData();
           data.append('tipo',"fecfir");
           data.append('fecfir', this.txtfecfir);
-          data.append('numcert', this.txtnumcert);
           data.append('nivel', this.nivel);
           data.append('_method', 'PUT');
           var url="listcert/"+this.idcert;

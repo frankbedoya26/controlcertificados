@@ -14,6 +14,14 @@ class ListacertificadoController extends Controller{
         $fechaActual = date('Y-m-d');
         return ['fecha'=>$fechaActual]; 
     }
+    public function getnumcert($cod){
+        $alumno=DB::table('v_verinumcert')->where('alumno_id',$cod)->where('deleted_at',NULL)->get();
+        return ['alumno'=>$alumno]; 
+    }
+    public function getfechacert($cod){
+        $fec=DB::table('v_verinumcert')->where('id',$cod)->get();
+        return ['fec'=>$fec]; 
+    }
 	public function index(Request $request){
         $buscar=$request->bus;
         $tipo=$request->tipo;
@@ -50,6 +58,13 @@ if ($tipo=="fecemi") {
     $certificado = Listacertificado::findOrFail($id);
     $certificado->fecemisi=$fecemi;
     $certificado->esta="En firmas";
+    $numcert=$request->numcert; 
+    if ($request->nivel=='Cacip') {
+       $certificado->numcercacip=$numcert;
+    }
+    if($request->nivel=="Pregrado" || $request->nivel=="Postgrado"){
+       $certificado->fk_certifiid=$numcert;
+    }
     $certificado->save();
 }
 if ($tipo=="fecfir") {
@@ -57,10 +72,6 @@ if ($tipo=="fecfir") {
     $certificado = Listacertificado::findOrFail($id);
     $certificado->fecfirma=$fecfir;
     $certificado->esta="Por entregar";
-    if ($request->nivel=='Cacip') {
-       $numcert=$request->numcert; 
-       $certificado->numcercacip=$numcert;
-    }
     $certificado->save();
 }
 if ($tipo=="fecentre") {

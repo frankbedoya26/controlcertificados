@@ -6,61 +6,196 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Document</title>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ public_path('css/pdf.css') }}" />
 
 
 </head>
 
 <body>
-
-    <header class="cabecera">
-        <div class="div_pdfsuperior">
-            <div class="div_pdflogo">
-                <img class="pdf_logo" src="{{ public_path('img/unasam.png') }}" alt="logo">
-            </div>
-            <div class="pdf_titulo">
-                <h4>UNIVERSIDAD NACIONAL "SANTIAGO ANTUNEZ DE MAYOLO"</h4>
-                <h3 class="titulo_acta">LISTA DE CERTIFICADOS</h3>
-            </div>
-        </div>
-        <div class="cuadro">
-            <h6 class="titulito">FECHA: {{$fec}}</h6>
-            <h6 class="titulito">DESDE: {{$fecdes}}</h6>
-            <h6 class="titulito">HASTA: {{$fechas}}</h6>
-
-            <!--h6 class="titulito">HASTA: {{$cadena}}</h6-->
-        </div>  
+    <header>
+        <br>
+        <p><strong>Formato de control de emisión de certificado</strong></p>
     </header>
-<div class="container">
-        <table class=" table table-striped tableuda">
+   
+        <h5 style="text-align: center"><strong>Lista de certificado</strong></h5>
+        <table class="table table-striped text-center table-bordered">
             <thead>
+                <tr>
+
+                    <th scope="col">CODIGO</th>
+                        <th scope="col">APELLIDOS Y NOMBRES</th>
+                        <th scope="col">SEMESTRES</th>
+                        <th scope="col">MONTO</th>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">ESTADO</th>
+                        <th scope="col">Firma</th>
+                        <th scope="col">DNI</th>
+                </tr>
+            </thead>
+           <tbody>
+            @foreach($certificado as $cert)
                     <tr>
-                        <th class="tablex">CODIGO</th>
-                        <th class="tablex">APELLIDOS Y NOMBRES</th>
-                        <th class="tablex">SEMESTRES</th>
-                        <th class="tablex">MONTO</th>
-                        <th class="tablex">TIPO</th>
-                        <th class="tablex">ESTADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                     @foreach($certificado as $cert)
-                    <tr>
-                        <td class="tablex">{{$cert->Codigo}}</td>
-                        <td class="tablex">{{$cert->Nombre}}</td>
-                        <td class="tablex">{{$cert->cantsem}}</td>
-                        <td class="tablex">{{$cert->monto}}</td>
-                        <td class="tablex">{{$cert->Tipo}}</td>
-                        <td class="tablex">{{$cert->esta}}</td>
+                        <td>{{$cert->Codigo}}</td>
+                        <td>{{$cert->Nombre}}</td>
+                        <td>{{$cert->cantsem}}</td>
+                        <td>{{$cert->monto}}</td>
+                        <td>{{$cert->Tipo}}</td>
+                        <td>{{$cert->esta}}</td>
+                        <td></td><td></td>
                     </tr>
                     @endforeach
-                </tbody>
-        </table>
-    </div>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
 
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr><tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+
+                    <tr>
+                        <th>sssss</th>
+                    </tr>
+            </tbody>
+        </table>
+    <footer>
+        <p><strong>Leyenda</strong></p>
+    </footer>
 </body>
 
 </html>

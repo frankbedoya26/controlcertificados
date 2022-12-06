@@ -101,7 +101,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group" v-if="divapp">
+                        <label>Número de certificado</label>
+                        <select class="form-control" v-model="cbocert" @change="getfechacer()">
+                            <option value="0">Seleccione</option>
+                            <option v-for="nc in numcert" v-bind:value="nc.id">@{{nc.num}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group" v-if="divacacip">
+                        <label>Número de certificado</label>
+                        <input type="text" v-model="txtnumcert" class="form-control" autocomplete="off" id="txtnumcert">
+                    </div>
+                    <div class="form-group" v-if="divacacip">
                         <label>Fecha de emisión</label>
                         <input type="date" v-model="txtfecemi" class="form-control">
                     </div>
@@ -124,10 +135,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label>Número de certificado</label>
-                        <input type="text" v-model="txtnumcert" class="form-control" autocomplete="off" id="txtnumcert">
-                    </div>
                     <div class="form-group">
                         <label>Fecha de firma</label>
                         <input type="date" v-model="txtfecfir" class="form-control">

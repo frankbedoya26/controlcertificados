@@ -62,6 +62,7 @@ $certificado=DB::table('dbo.v_certificadoall')->whereBetween('fecingreso', [$fec
 
         $vista = view('reporte.pdf',compact('fec','certificado','fecdes','fechas','cadena'));
         $pdf = \App::make('dompdf.wrapper');
+        $pdf->setPaper('a4', 'landscape');
         $pdf->setOption('isPhpEnabled', true);
         $pdf->loadHTML($vista);
         return $pdf->stream('certificados.pdf');

@@ -1,82 +1,33 @@
-.div_pdfsuperior{
-    width: 48em;
-    height: 10.7em;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.pdf_logo{
-    width: 3em;
-    margin: 0.3em 1em;
-}
-.div_pdflogo{
-    width: 5em;
-}
-.pdf_titulo{
-    width: 32em;
-    text-align: center;
-    font-family: Verdana, Tahoma, sans-serif;
-    position: absolute;
-    top: 1em;
-    left: 5em;
-}
-.titulo_acta{
-    font-size:large;
-}
-.div_inferior{
-    width: 40em;
-    position: absolute;
-    top: 5em;
-    left: 2em;
 
+ @page {
+    margin: 0cm 0cm;
+    font-size: 1em;
 }
-h6{
-    font-size: 0.7em;
-    margin: 0 auto;
+
+body {
+    margin: 3cm 2cm 2cm;
 }
-.cabecera{
-    border: 1px solid black;
-    width: 48em;
-    height: 6em;
-    left: -2em;
-    top: -2em;
-}
-.cuadro{
-    width: 8em;
-    border: 1px solid black;
-    height: 67px;
-    position: relative;
-    top: -9.8em;
-    left: 39em;
-}
-.titulito{
-    margin: 0.3em 0.2em;
-    padding: 0.1em;
-    border: 1px solid black;
-}
-.container{
-    font-size: small;
-    width: 48em;
-    height: 44em;
-    margin: 12em auto;
-    margin-top: 6em;
-    margin-right: 11em;
-}
-.tableuda{
-    width: 48em;
-    margin-left: 1px;
-    z-index: -1;
-}
-.tablex{
-    font-size: 12px;
-    border: 1px solid black;
-    padding: 0.3em;
-}
-.cabecera,.footer{
+
+header {
     position: fixed;
-    z-index: 10;
+    top: 0cm;
+    left: 0cm;
+    right: 0cm;
+    height: 2cm;
+    background-color: #F93855;
+    color: white;
+    text-align: center;
+    line-height: 30px;
 }
-.nota{
-    text-align: justify;
-    padding-left: 0.3em;
-    
+
+footer {
+    position: fixed;
+    bottom: 0cm;
+    left: 0cm;
+    right: 0cm;
+    height: 2cm;
+    background-color: #F93855;
+    color: white;
+    text-align: center;
+    line-height: 35px;
 }

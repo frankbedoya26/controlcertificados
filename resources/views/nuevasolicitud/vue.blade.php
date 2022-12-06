@@ -44,9 +44,9 @@
     },
 		methods: {
       pagar:function(){
-                if (this.tipo=="Pregrado"  || this.tipo=="pregrado") {
+                if (this.tipo=="Pregrado") {
                   this.txtmonto=this.mpregrado*this.txtcant;
-                }else if (this.tipo=="Posgrado" || this.tipo=="posgrado") {
+                }else if (this.tipo=="Posgrado") {
                   this.txtmonto=this.mpostgrado*this.txtcant;
                 }else if (this.tipo=="Cacip") {
                   this.txtmonto=this.mcacip*this.txtcant;
@@ -98,7 +98,7 @@
                 this.txtemail=alum.Email;
                 this.txttel=alum.Telefono;
                 this.txtdir=alum.Direccion;
-                this.tipo=alum.nivel;
+                this.tipo=this.cbotipo;
                 this.idalumn=alum.id;
 
         this.tabalumnos=false;
@@ -110,10 +110,10 @@
         axios.get(url).then(response=>{
           this.txtcant=response.data.cant;
 
-                          if (this.tipo=="Pregrado"  || this.tipo=="pregrado") {
+                          if (this.tipo=="Pregrado") {
                   this.txtmonto=this.mpregrado*this.txtcant;
                   this.monto=this.mpregrado;
-                }else if (this.tipo=="Posgrado" || this.tipo=="posgrado") {
+                }else if (this.tipo=="Posgrado") {
                   this.txtmonto=this.mpostgrado*this.txtcant;
                   this.monto=this.mpostgrado;
                 }else if (this.tipo=="Cacip") {
@@ -145,10 +145,10 @@
                 this.txtemail=this.alumno[0]['Email'];
                 this.txttel=this.alumno[0]['Telefono'];
                 this.txtdir=this.alumno[0]['Direccion'];
-                this.tipo=this.alumno[0]['nivel'];
+                this.tipo=this.cbotipo;
                 this.idalumn=this.alumno[0]['id'];
 
-                if (this.tipo=="Pregrado" || this.tipo=="pregrado" ) {
+                if (this.tipo=="Pregrado") {
                   this.txtmonto=this.mpregrado*this.txtcant;
                   this.monto=this.mpregrado;
                 }else if (this.tipo=="Posgrado") {

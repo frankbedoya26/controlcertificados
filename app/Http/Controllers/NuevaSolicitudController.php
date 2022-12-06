@@ -22,7 +22,7 @@ class NuevaSolicitudController extends Controller{
             })->get();
         }
         if ($tipo=="Posgrado" || $tipo=="Pregrado") {
-            $alumno=DB::table('dbo.v_certificado')->where('nivel',$tipo)->where(function($query) use ($buscar){
+            $alumno=DB::table('dbo.v_alumnoprograma')->where(function($query) use ($buscar){
                 $query->where('Alumno','=',$buscar);
                 $query->orWhere('NombreCompleto','like','%'.$buscar.'%');
                 $query->orWhere('Dni','=',$buscar);
@@ -43,8 +43,8 @@ class NuevaSolicitudController extends Controller{
 
         $solicitud = new NuevaSolicitud();
         $solicitud->fecingreso=date('Y-m-d');
-        if ($tipo=="Pregrado" || $tipo=="pregrado" || $tipo=="Posgrado" || $tipo=="posgrado") {
-            $solicitud->fk_certifiid=$idalumn;
+        if ($tipo=="Pregrado" || $tipo=="Posgrado") {
+            $solicitud->fk_idalumpp=$idalumn;
         }else if ($tipo=="Cacip") {
             $solicitud->fk_idalumcac=$idalumn;
             $solicitud->aniocacip=date('Y');
@@ -55,6 +55,7 @@ class NuevaSolicitudController extends Controller{
         $solicitud->costosem=$costo;
         $solicitud->cantsem=$cant;
         $solicitud->esta=$esta;
+        $solicitud->tip=$tipo;
         $solicitud->save();
         $msj='si';
         return response()->json(['msj'=>$msj]);

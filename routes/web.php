@@ -25,6 +25,8 @@ Route::get('/',[NuevaSolicitudController::class,'index1']);
 Route::get('/listacertificado',[ListacertificadoController::class,'index1']);
 Route::resource('listcert',ListacertificadoController::class);
 Route::get('/fecha/actual',[ListacertificadoController::class,'getfecha']);
+Route::get('/numero/certificado/{cod}',[ListacertificadoController::class,'getnumcert']);
+Route::get('/fecha/certificado/{cod}',[ListacertificadoController::class,'getfechacert']);
 
 Route::get('/registralumno',[RegistralumnoController::class,'index1']);
 Route::resource('regalumn',RegistralumnoController::class);

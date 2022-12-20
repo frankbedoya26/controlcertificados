@@ -18,18 +18,18 @@
         <br>
         <p><strong>Formato de control de emisión de certificado</strong></p>
     </header>
-   
+        <div class="tamano_general">
         <h5 style="text-align: center"><strong>Lista de certificado</strong></h5>
-        <table class="table table-striped text-center table-bordered">
+        <table class="table table-striped table-bordered">
             <thead>
-                <tr>
+                <tr class="text-center">
 
-                    <th scope="col">CODIGO</th>
-                        <th scope="col">APELLIDOS Y NOMBRES</th>
-                        <th scope="col">SEMESTRES</th>
-                        <th scope="col">MONTO</th>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">ESTADO</th>
+                    <th scope="col" style="width:2.7cm;">CODIGO</th>
+                        <th scope="col" style="width:8cm;">APELLIDOS Y NOMBRES</th>
+                        <th scope="col" style="width:0.8cm;">N° SEM</th>
+                        <th scope="col" style="width:1.4cm;">MONTO</th>
+                        <th scope="col" style="width:1.4cm;">TIPO</th>
+                        <th scope="col" style="width:1.4cm;">ESTADO</th>
                         <th scope="col">Firma</th>
                         <th scope="col">DNI</th>
                 </tr>
@@ -40,161 +40,18 @@
                         <td>{{$cert->Codigo}}</td>
                         <td>{{$cert->Nombre}}</td>
                         <td>{{$cert->cantsem}}</td>
-                        <td>{{$cert->monto}}</td>
+                        <td class="text-center">{{$cert->monto}}</td>
                         <td>{{$cert->Tipo}}</td>
                         <td>{{$cert->esta}}</td>
                         <td></td><td></td>
                     </tr>
                     @endforeach
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr><tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
-
-                    <tr>
-                        <th>sssss</th>
-                    </tr>
+                   
             </tbody>
         </table>
+        </div>
     <footer>
-        <p><strong>Leyenda</strong></p>
+        <!-- <p><strong>Leyenda</strong></p> -->
     </footer>
 </body>
 

@@ -30,7 +30,7 @@
                                             <div class="form-group col-md-3 col-sm-3">
                                                 <label>Estado</label>
                                                 <select class="form-control" v-model="cboesta" name="cboesta">
-                                                    <option value="0">Seleccione</option>
+                                                    <option value="0">Todas</option>
                                                     <option value="Pendiente">Pendiente</option>
                                                     <option value="En firmas">En firmas</option>
                                                     <option value="Por entregar">Por entregar</option>
@@ -40,7 +40,7 @@
                                             <div class="form-group col-md-3 col-sm-3">
                                                 <label>Tipo</label>
                                                 <select class="form-control" v-model="cbotipo" name="cbotipo">
-                                                    <option value="0">Seleccione</option>
+                                                    <option value="0">Todas</option>
                                                     <option value="Pregrado">Pregrado</option>
                                                     <option value="Postgrado">Postgrado</option>
                                                     <option value="Cacip">Cacip</option>>
